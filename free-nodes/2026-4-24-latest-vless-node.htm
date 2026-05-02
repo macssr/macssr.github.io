@@ -378,11 +378,6 @@ Clash会按照规则顺序逐条匹配，匹配成功后立即应用对应策略
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 节点手动切换有什么优势？</h5></div>
-    <div class="panel-body">
-        手动切换节点可以让用户根据网络延迟和用途选择最合适的节点，适合在节点不稳定或特殊访问需求下使用。虽然不自动，但可以灵活调整，提高访问效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>如何在 V2Ray 中自定义路由规则？</h5></div>
     <div class="panel-body">
         在 V2Ray 中可以通过修改 config.json 文件中的 routing 部分来自定义路由规则。用户可以根据 IP 段、域名或地理位置来决定流量的去向，从而实现自动分流或访问加速的效果。<hr />    </div>
@@ -391,16 +386,6 @@ Clash会按照规则顺序逐条匹配，匹配成功后立即应用对应策略
     <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
     <div class="panel-body">
         Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现按应用分流？</h5></div>
-    <div class="panel-body">
-        V2Ray 支持按用户标签或端口匹配应用流量，结合策略组可实现指定应用走特定节点。这样可以保证游戏、视频和浏览器流量各自走最优线路，提高访问效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 策略组如何根据延迟自动切换节点？</h5></div>
-    <div class="panel-body">
-        策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 节点测速如何提高访问效率？</h5></div>
@@ -413,9 +398,19 @@ Clash会按照规则顺序逐条匹配，匹配成功后立即应用对应策略
         Sing-box 允许用户自定义多个 outbound 出口，并通过路由规则选择性输出。例如可让流媒体走特定节点，而其他网站使用备用节点，从而实现精准分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 的加密方式如何选择？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 策略组如何根据延迟自动切换节点？</h5></div>
     <div class="panel-body">
-        VMess 支持自动加密和 AEAD 加密等多种方式。AEAD 加密更安全且抗重放攻击，适合高安全性需求的网络环境，而普通加密在性能上稍快，但安全性略低。<hr />    </div>
+        策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的自动切换功能如何配置？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 支持根据策略组和节点延迟自动切换最优节点。用户可设置测速频率和延迟阈值，程序会定期测试节点并自动切换，以保证网络稳定性和速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 节点手动切换有什么优势？</h5></div>
+    <div class="panel-body">
+        手动切换节点可以让用户根据网络延迟和用途选择最合适的节点，适合在节点不稳定或特殊访问需求下使用。虽然不自动，但可以灵活调整，提高访问效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 的多节点测速机制是怎样的？</h5></div>
@@ -423,9 +418,14 @@ Clash会按照规则顺序逐条匹配，匹配成功后立即应用对应策略
         Matsuri 使用并发测速机制，可同时对多个节点进行延迟与带宽测试。测试结果会自动排序，并可根据延迟或速度自动切换最优节点，提升连接体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的自动切换功能如何配置？</h5></div>
+    <div class="panel-heading"><h5>VMess 的加密方式如何选择？</h5></div>
     <div class="panel-body">
-        Shadowrocket 支持根据策略组和节点延迟自动切换最优节点。用户可设置测速频率和延迟阈值，程序会定期测试节点并自动切换，以保证网络稳定性和速度。    </div>
+        VMess 支持自动加密和 AEAD 加密等多种方式。AEAD 加密更安全且抗重放攻击，适合高安全性需求的网络环境，而普通加密在性能上稍快，但安全性略低。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现按应用分流？</h5></div>
+    <div class="panel-body">
+        V2Ray 支持按用户标签或端口匹配应用流量，结合策略组可实现指定应用走特定节点。这样可以保证游戏、视频和浏览器流量各自走最优线路，提高访问效率。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -454,16 +454,16 @@ Clash会按照规则顺序逐条匹配，匹配成功后立即应用对应策略
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-18-latest-vless-node.htm" title="Mac SSR | 4月18日22.6M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点订阅节点分享">Mac SSR | 4月18日22.6M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-29-vless-windows.htm" title="Mac SSR | 3月29日21M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点分享">Mac SSR | 3月29日21M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-16-free-subscribe-node.htm" title="Mac SSR | 4月16日22.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点订阅节点分享">Mac SSR | 4月16日22.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-22-vless-node-share.htm" title="Mac SSR | 3月22日18.9M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点订阅节点分享">Mac SSR | 3月22日18.9M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-13-free-subscribe-node.htm" title="Mac SSR | 3月13日18.5M/S|免费Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享">Mac SSR | 3月13日18.5M/S|免费Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-24-latest-vless-node.htm" title="Mac SSR | 4月24日20.8M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点分享">Mac SSR | 4月24日20.8M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-23-today-vless-node.htm" title="Mac SSR | 3月23日21.3M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点分享">Mac SSR | 3月23日21.3M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-20-vless-node-share.htm" title="Mac SSR | 3月20日21.4M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Trojan节点订阅节点分享">Mac SSR | 3月20日21.4M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Trojan节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-7-today-vless-node.htm" title="Mac SSR | 3月7日20.5M/S|免费V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点订阅节点分享">Mac SSR | 3月7日20.5M/S|免费V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-17-vless-node.htm" title="Mac SSR | 4月17日18.8M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点分享">Mac SSR | 4月17日18.8M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-27-vless-windows.htm" title="Mac SSR | 3月27日21M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点订阅节点分享">Mac SSR | 3月27日21M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-10-vless-node-github.htm" title="Mac SSR | 3月10日19.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点订阅节点分享">Mac SSR | 3月10日19.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-4-free-node-subscribe.htm" title="Mac SSR | 3月4日22.2M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享">Mac SSR | 3月4日22.2M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-5-free-subscribe-node.htm" title="Mac SSR | 3月5日22.6M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点订阅节点分享">Mac SSR | 3月5日22.6M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-21-node-share.htm" title="Mac SSR | 3月21日22.2M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点订阅节点分享">Mac SSR | 3月21日22.2M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-30-vless-github.htm" title="Mac SSR | 3月30日20.2M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点订阅节点分享">Mac SSR | 3月30日20.2M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-15-node-share.htm" title="Mac SSR | 4月15日20.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点订阅节点分享">Mac SSR | 4月15日20.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-11-free-subscribe-node.htm" title="Mac SSR | 3月11日19.2M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点订阅节点分享">Mac SSR | 3月11日19.2M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-6-latest-vless-node.htm" title="Mac SSR | 3月6日19.9M/S|免费Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点订阅节点分享">Mac SSR | 3月6日19.9M/S|免费Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-25-node-share.htm" title="Mac SSR | 3月25日21.2M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点订阅节点分享">Mac SSR | 3月25日21.2M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点订阅节点分享</a></li>
                     </ul>
     </div>
 </div>
@@ -475,7 +475,10 @@ Clash会按照规则顺序逐条匹配，匹配成功后立即应用对应策略
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
