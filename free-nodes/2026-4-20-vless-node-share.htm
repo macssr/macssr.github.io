@@ -261,14 +261,9 @@ Shadowsocks是一种基于代理协议的科学上网工具，通常被认为是
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 可以设置自定义 DNS 吗？</h5></div>
+    <div class="panel-heading"><h5>Clash 的 Rule Provider 有什么作用？</h5></div>
     <div class="panel-body">
-        支持自定义 DNS，可配置本地或远程 DNS 服务器，包括 DoH/DoT。正确配置可提升解析速度、防止 DNS 污染，提高访问稳定性和安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 如何设置分流规则？</h5></div>
-    <div class="panel-body">
-        Nekobox 提供图形化规则编辑界面，可基于 IP、域名、地区等条件创建分流规则。例如可设置国内直连、国外代理、特定网站走特定节点，操作直观。<hr />    </div>
+        Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
@@ -276,24 +271,14 @@ Shadowsocks是一种基于代理协议的科学上网工具，通常被认为是
         在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 如何设置分流规则？</h5></div>
+    <div class="panel-body">
+        Nekobox 提供图形化规则编辑界面，可基于 IP、域名、地区等条件创建分流规则。例如可设置国内直连、国外代理、特定网站走特定节点，操作直观。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow TUN 模式的全局代理作用是什么？</h5></div>
     <div class="panel-body">
         TUN 模式拦截系统 IP 层的所有流量，实现全局代理效果。相比 SOCKS5 只作用于特定应用，TUN 可覆盖游戏、视频和浏览器流量，保证全系统科学上网体验稳定顺畅。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的 PAC 模式适合哪些使用场景？</h5></div>
-    <div class="panel-body">
-        PAC 模式可根据规则文件动态判断流量是否走代理。适合访问国内外混合网站环境，无需手动切换节点，程序自动分流，提高网络访问效率和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
-    <div class="panel-body">
-        Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何为 Trojan 配置 ALPN 与 SNI 提升伪装效果？</h5></div>
-    <div class="panel-body">
-        在服务器与客户端配置中设置合适的 SNI（伪装域名）并启用 ALPN（例如 http/1.1），确保 TLS 握手时使用常见的应用层协议标识，从而增加流量与普通 HTTPS 的相似度，降低被检测概率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 是否支持多订阅源？</h5></div>
@@ -306,9 +291,24 @@ Shadowsocks是一种基于代理协议的科学上网工具，通常被认为是
         若 CDN 回源 IP 或配置不当可能泄露真实服务器信息，或者 CDN 本身被目标防火墙识别。应启用完整的反向代理配置、隐藏源站 IP 与禁用不必要的服务，必要时使用多级中转或更换 CDN 供应商。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Rule Provider 有什么作用？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 可以设置自定义 DNS 吗？</h5></div>
     <div class="panel-body">
-        Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。    </div>
+        支持自定义 DNS，可配置本地或远程 DNS 服务器，包括 DoH/DoT。正确配置可提升解析速度、防止 DNS 污染，提高访问稳定性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何为 Trojan 配置 ALPN 与 SNI 提升伪装效果？</h5></div>
+    <div class="panel-body">
+        在服务器与客户端配置中设置合适的 SNI（伪装域名）并启用 ALPN（例如 http/1.1），确保 TLS 握手时使用常见的应用层协议标识，从而增加流量与普通 HTTPS 的相似度，降低被检测概率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
+    <div class="panel-body">
+        Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的 PAC 模式适合哪些使用场景？</h5></div>
+    <div class="panel-body">
+        PAC 模式可根据规则文件动态判断流量是否走代理。适合访问国内外混合网站环境，无需手动切换节点，程序自动分流，提高网络访问效率和稳定性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -337,16 +337,16 @@ Shadowsocks是一种基于代理协议的科学上网工具，通常被认为是
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-4-free-node-subscribe.htm" title="Mac SSR | 3月4日22.2M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享">Mac SSR | 3月4日22.2M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-22-latest-vless-node.htm" title="Mac SSR | 4月22日22.5M/S|免费Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点分享">Mac SSR | 4月22日22.5M/S|免费Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-16-free-subscribe-node.htm" title="Mac SSR | 4月16日22.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点订阅节点分享">Mac SSR | 4月16日22.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-10-vless-node-github.htm" title="Mac SSR | 3月10日19.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点订阅节点分享">Mac SSR | 3月10日19.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-28-vless-windows.htm" title="Mac SSR | 3月28日21.5M/S|免费Clash节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点分享">Mac SSR | 3月28日21.5M/S|免费Clash节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-2-vless-node.htm" title="Mac SSR | 4月2日19.3M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点分享">Mac SSR | 4月2日19.3M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-latest-vless-node.htm" title="Mac SSR | 5月6日20.5M/S|免费Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点订阅节点分享">Mac SSR | 5月6日20.5M/S|免费Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点订阅节点分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-23-vless-node-github.htm" title="Mac SSR | 4月23日20.1M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点订阅节点分享">Mac SSR | 4月23日20.1M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-12-vless-windows.htm" title="Mac SSR | 3月12日18.5M/S|免费Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享">Mac SSR | 3月12日18.5M/S|免费Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-17-vless-node-github.htm" title="Mac SSR | 3月17日19.3M/S|免费V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点订阅节点分享">Mac SSR | 3月17日19.3M/S|免费V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-15-node-share.htm" title="Mac SSR | 4月15日20.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点订阅节点分享">Mac SSR | 4月15日20.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-1-vless-github.htm" title="Mac SSR | 5月1日21.8M/S|免费Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享">Mac SSR | 5月1日21.8M/S|免费Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-27-free-node-subscribe.htm" title="Mac SSR | 4月27日20.3M/S|免费SSR节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/V2ray节点订阅节点分享">Mac SSR | 4月27日20.3M/S|免费SSR节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-29-node-share-links.htm" title="Mac SSR | 4月29日22.5M/S|免费SSR节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点订阅节点分享">Mac SSR | 4月29日22.5M/S|免费SSR节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-22-latest-vless-node.htm" title="Mac SSR | 4月22日22.5M/S|免费Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点分享">Mac SSR | 4月22日22.5M/S|免费Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-9-vless-github.htm" title="Mac SSR | 5月9日19.8M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点订阅节点分享">Mac SSR | 5月9日19.8M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-10-free-node-subscribe-links.htm" title="Mac SSR | 5月10日18M/S|免费Trojan节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点分享">Mac SSR | 5月10日18M/S|免费Trojan节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-16-free-subscribe-node.htm" title="Mac SSR | 4月16日22.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点订阅节点分享">Mac SSR | 4月16日22.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-node-subscribe-links.htm" title="Mac SSR | 4月28日19.2M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点订阅节点分享">Mac SSR | 4月28日19.2M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点订阅节点分享</a></li>
                     </ul>
     </div>
 </div>
@@ -358,10 +358,10 @@ Shadowsocks是一种基于代理协议的科学上网工具，通常被认为是
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
