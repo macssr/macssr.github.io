@@ -1,4 +1,4 @@
-# Mac SSR | 5月30日21.6M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点订阅节点分享  更新时间 2026-05-30 10:21:36
+# Mac SSR | 6月8日22M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点分享  更新时间 2026-06-08 08:28:53
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://macssr.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://macssr.github.io/uploads/2026/05/0-20260530.yaml
-- https://macssr.github.io/uploads/2026/05/1-20260530.yaml
-- https://macssr.github.io/uploads/2026/05/2-20260530.yaml
-- https://macssr.github.io/uploads/2026/05/3-20260530.yaml
-- https://macssr.github.io/uploads/2026/05/4-20260530.yaml
+- https://macssr.github.io/uploads/2026/06/0-20260608.yaml
+- https://macssr.github.io/uploads/2026/06/1-20260608.yaml
+- https://macssr.github.io/uploads/2026/06/2-20260608.yaml
+- https://macssr.github.io/uploads/2026/06/3-20260608.yaml
+- https://macssr.github.io/uploads/2026/06/4-20260608.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://macssr.github.io/uploads/2026/05/0-20260530.txt
-- https://macssr.github.io/uploads/2026/05/1-20260530.txt
-- https://macssr.github.io/uploads/2026/05/2-20260530.txt
-- https://macssr.github.io/uploads/2026/05/3-20260530.txt
-- https://macssr.github.io/uploads/2026/05/4-20260530.txt
+- https://macssr.github.io/uploads/2026/06/0-20260608.txt
+- https://macssr.github.io/uploads/2026/06/1-20260608.txt
+- https://macssr.github.io/uploads/2026/06/2-20260608.txt
+- https://macssr.github.io/uploads/2026/06/3-20260608.txt
+- https://macssr.github.io/uploads/2026/06/4-20260608.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://macssr.github.io/uploads/2026/05/20260530.json
+- https://macssr.github.io/uploads/2026/06/20260608.json
 
 ## 更多Clash节点订阅 ：
 
