@@ -258,9 +258,9 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 连接延迟过高该如何优化？</h5></div>
+    <div class="panel-heading"><h5>Clash 如何实现节点健康监测？</h5></div>
     <div class="panel-body">
-        可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。<hr />    </div>
+        Clash 支持定期测速节点延迟和丢包率，将节点状态显示在客户端。结合策略组，可以自动选择健康节点进行访问，避免访问高延迟或失效节点，提高网络稳定性和效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess AEAD 加密如何保证数据安全？</h5></div>
@@ -268,14 +268,24 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
         AEAD 加密防止数据篡改、重放攻击和流量特征泄露。在高封锁环境下使用，可保证节点长期可用，提升数据安全和连接稳定性，同时降低被检测风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2RayA 在 Linux 系统中如何开机自启？</h5></div>
+    <div class="panel-heading"><h5>VMess 连接延迟过高该如何优化？</h5></div>
     <div class="panel-body">
-        可通过 systemd 创建启动项或在启动脚本中添加 V2RayA 启动命令。编辑 /etc/systemd/system/v2raya.service 文件并设置 `Restart=always`，执行 `systemctl enable v2raya` 使其随系统自动启动。<hr />    </div>
+        可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何实现节点健康监测？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 的 DNS 模块如何工作？</h5></div>
     <div class="panel-body">
-        Clash 支持定期测速节点延迟和丢包率，将节点状态显示在客户端。结合策略组，可以自动选择健康节点进行访问，避免访问高延迟或失效节点，提高网络稳定性和效率。<hr />    </div>
+        Sing-box 内置 DNS 模块，支持 fake-ip 模式和纯直连模式。它可根据规则选择不同的上游 DNS 服务，从而实现国内外域名智能分流，减少访问延迟。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的端口转发功能如何开启？</h5></div>
+    <div class="panel-body">
+        在服务器端配置文件中启用 port_forwarding 参数并指定目标端口与地址。确保防火墙开放转发端口，客户端使用对应端口连接即可实现流量中继。此功能常用于内网穿透或端口复用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 能否使用订阅链接？</h5></div>
+    <div class="panel-body">
+        Nekobox 支持通过订阅 URL 导入节点。用户在应用中选择“添加订阅”，输入链接后系统会自动更新节点数据，并支持定期刷新，确保始终使用最新线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何按端口分流流量？</h5></div>
@@ -283,9 +293,9 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
         Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组使用，可精准分流，提高访问速度和网络稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的 DNS 模块如何工作？</h5></div>
+    <div class="panel-heading"><h5>V2RayA 在 Linux 系统中如何开机自启？</h5></div>
     <div class="panel-body">
-        Sing-box 内置 DNS 模块，支持 fake-ip 模式和纯直连模式。它可根据规则选择不同的上游 DNS 服务，从而实现国内外域名智能分流，减少访问延迟。<hr />    </div>
+        可通过 systemd 创建启动项或在启动脚本中添加 V2RayA 启动命令。编辑 /etc/systemd/system/v2raya.service 文件并设置 `Restart=always`，执行 `systemctl enable v2raya` 使其随系统自动启动。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的 PAC 模式适合什么场景？</h5></div>
@@ -295,17 +305,7 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 的节点测速结果如何优化网络体验？</h5></div>
     <div class="panel-body">
-        Shadowrocket 测量节点延迟和丢包率，将延迟低的节点优先使用。结合策略组和分流规则，可提升网页浏览、视频播放和游戏的访问速度和稳定性，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 能否使用订阅链接？</h5></div>
-    <div class="panel-body">
-        Nekobox 支持通过订阅 URL 导入节点。用户在应用中选择“添加订阅”，输入链接后系统会自动更新节点数据，并支持定期刷新，确保始终使用最新线路。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的端口转发功能如何开启？</h5></div>
-    <div class="panel-body">
-        在服务器端配置文件中启用 port_forwarding 参数并指定目标端口与地址。确保防火墙开放转发端口，客户端使用对应端口连接即可实现流量中继。此功能常用于内网穿透或端口复用。    </div>
+        Shadowrocket 测量节点延迟和丢包率，将延迟低的节点优先使用。结合策略组和分流规则，可提升网页浏览、视频播放和游戏的访问速度和稳定性，优化整体网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -335,15 +335,13 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
     <div class="panel-body">
         <div class="row">
             <div class="text-center">
-                <a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">
-                    <img src="/assets/website/img/G/luniuyun.webp" class="avatar" alt="绿牛云">
+                <a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">
+                    <img src="/assets/website/img/G/xingchen.webp" class="avatar" alt="星辰机场">
                 </a>
                 <dl>
-                    <dt><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></dt>
+                    <dt><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></dt>
                     <dd>
-                        <p>高速稳定的网络加速</p>
-                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
-全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p>                    </dd>
+                        <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p>                    </dd>
                 </dl>
             </div>
         </div>
@@ -355,16 +353,16 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-13-vless-github.htm" title="Mac SSR | 5月13日20.2M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点订阅节点分享">Mac SSR | 5月13日20.2M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-15-free-vless-node.htm" title="Mac SSR | 6月15日18.6M/S|免费SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点订阅节点分享">Mac SSR | 6月15日18.6M/S|免费SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-18-vless-node-share.htm" title="Mac SSR | 6月18日20.7M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点订阅节点分享">Mac SSR | 6月18日20.7M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-6-vless-node-share.htm" title="Mac SSR | 6月6日19.2M/S|免费SSR节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享">Mac SSR | 6月6日19.2M/S|免费SSR节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-5-free-vless-node.htm" title="Mac SSR | 7月5日20.8M/S|免费Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点订阅节点分享">Mac SSR | 7月5日20.8M/S|免费Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-3-latest-vless-node.htm" title="Mac SSR | 5月3日19.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点订阅节点分享">Mac SSR | 5月3日19.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点订阅节点分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-6-27-vless-node.htm" title="Mac SSR | 6月27日19M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点订阅节点分享">Mac SSR | 6月27日19M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-22-node-share.htm" title="Mac SSR | 5月22日18.1M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点订阅节点分享">Mac SSR | 5月22日18.1M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-13-today-vless-node.htm" title="Mac SSR | 6月13日19.1M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点订阅节点分享">Mac SSR | 6月13日19.1M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-5-free-vless-node.htm" title="Mac SSR | 6月5日20.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点订阅节点分享">Mac SSR | 6月5日20.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-21-vless-node-github.htm" title="Mac SSR | 5月21日20.7M/S|免费V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点订阅节点分享">Mac SSR | 5月21日20.7M/S|免费V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-28-node-share.htm" title="Mac SSR | 5月28日21.8M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点订阅节点分享">Mac SSR | 5月28日21.8M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-22-free-subscribe-node.htm" title="Mac SSR | 6月22日22M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点订阅节点分享">Mac SSR | 6月22日22M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-13-vless-github.htm" title="Mac SSR | 5月13日20.2M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点订阅节点分享">Mac SSR | 5月13日20.2M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点订阅节点分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-6-11-free-vless-node.htm" title="Mac SSR | 6月11日18.8M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点订阅节点分享">Mac SSR | 6月11日18.8M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-23-node-share.htm" title="Mac SSR | 5月23日18.7M/S|免费Trojan节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点分享">Mac SSR | 5月23日18.7M/S|免费Trojan节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-29-free-vless-node.htm" title="Mac SSR | 5月29日19M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点订阅节点分享">Mac SSR | 5月29日19M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-25-free-node-subscribe-links.htm" title="Mac SSR | 5月25日21.7M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点订阅节点分享">Mac SSR | 5月25日21.7M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点订阅节点分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -376,7 +374,10 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
@@ -404,9 +405,7 @@ sudo ufw </span><span><span class="hljs-built_in">enable</span></span><span>
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></b> <p>高速稳定的网络加速</p>
-                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
-全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p></div>
+                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></b> <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p></div>
                                 <p>
                 <a href="/">Mac SSR免费订阅中文网</a> 版权所有 Powered by WordPress
             </p>
